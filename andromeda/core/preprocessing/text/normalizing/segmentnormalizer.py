@@ -1,6 +1,7 @@
+import os
 import math
 
-from andromeda.utils import NlpUtils
+from andromeda.util import NlpUtil
 
 
 def memoize(f):
@@ -28,7 +29,7 @@ class SegmentNormalizer:
         segment = ' '.join(segment_list)
 
         # Match the original capitalization as good as possible
-        segment = NlpUtils.match_word_capitalization(s, segment)
+        segment = NlpUtil.match_word_capitalization(s, segment)
 
         if len(segment_list) == 1:
             return False, segment
@@ -65,7 +66,7 @@ class WordDistribution(dict):
         self.gramCount = 0
 
         for word_list_file_name in word_list_file_name_list:
-            for line in open(word_list_file_name):
+            for line in open(os.path.expanduser(word_list_file_name)):
                 (word, count) = line[:-1].split('\t')
                 self[word] = int(count)
                 self.gramCount += self[word]

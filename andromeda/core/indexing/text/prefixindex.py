@@ -1,21 +1,39 @@
+import os
 
 class PrefixIndex:
 
-    def __init__(self,  input_file_name_list, ingored_prefix_tokens_file_name_list=[], do_lower_case=True):
+    def __init__(self, do_lower_case=True, **kwargs):
         self._do_lower_case = do_lower_case
-        self._wildcard_char_set = set([" ", "'", "."])
-        self._init_ignored_prefix_tokens(ingored_prefix_tokens_file_name_list)
-        self._create_index(input_file_name_list, ingored_prefix_tokens_file_name_list)
+        self._wildcard_char_set = {" ", "'", "."}
+
+
+        if 'ingored_prefix_tokens_file_name_list' in kwargs:
+            self._init_ignored_prefix_tokens_from_file(kwargs['ingored_prefix_tokens_file_name_list'])
+        elif 'ingored_prefix_tokens_list' in kwargs:
+            self._init_ignored_prefix_tokens_from_list(kwargs['ingored_prefix_tokens_list'])
+
+        if 'input_file_name_list' in kwargs:
+            self._create_index_from_file(kwargs['input_file_name_list'])
+        elif 'input_list' in kwargs:
+            self._create_index_from_list(kwargs['input_list'])
 
 
 
-    def _create_index(self, input_file_name_list, ingored_prefix_tokens_file_name_list):
+
+
+    def _create_index_from_file(self, input_file_name_list):
         # Initial prefix trie data structure
         self.index = ({}, set())
 
+        if input_file_name_list is None:
+            return
+
+        if len(input_file_name_list) == 0:
+            return
+
         # Go through all files
         for input_file_name in input_file_name_list:
-            with open(input_file_name, 'r') as f:
+            with open(os.path.expanduser(input_file_name), 'r') as f:
                 for line in f:
                     line = line.strip()
                     if line[0] == '#': # Ignored commented lines
@@ -32,6 +50,33 @@ class PrefixIndex:
                         self._handle_phrase(phrase, key)
                     except:
                         pass
+
+
+
+
+
+    def _create_index_from_list(self, input_list):
+        # Initial prefix trie data structure
+        self.index = ({}, set())
+
+        if input_list is None:
+            return
+
+        if len(input_list) == 0:
+            return
+
+        # Go through list of tuples (string, key)
+        for tup in input_list:
+            try:
+                phrase = tup[0]
+                key = tup[1]
+
+                if self._do_lower_case:
+                    phrase = phrase.lower()
+
+                self._handle_phrase(phrase, key)
+            except:
+                pass
 
 
 
@@ -104,7 +149,7 @@ class PrefixIndex:
         try:
             # Get first character (head) and rest (tail) of character list, throws exception if empty
             head, tail = character_list[0], character_list[1:]
-
+            #print head, tail
             # Check if first character (head) is in index, if so continue recursively
             if head in index[0]:
                 matching_prefix_str += head
@@ -213,7 +258,7 @@ class PrefixIndex:
             print e
 
 
-    def _init_ignored_prefix_tokens(self, ingored_prefix_tokens_file_name_list):
+    def _init_ignored_prefix_tokens_from_file(self, ingored_prefix_tokens_file_name_list):
         # Set set of ignored prefixes to empty set
         self.ignored_prefix_tokens_set = set()
 
@@ -225,7 +270,7 @@ class PrefixIndex:
             return
         # Otherwise, go through list and handle each file name
         for ingored_prefix_words_file_name in ingored_prefix_tokens_file_name_list:
-            with open(ingored_prefix_words_file_name, 'r') as f:
+            with open(os.path.expanduser(ingored_prefix_words_file_name), 'r') as f:
                 for line in f:
                     line = line.strip().lower()
                     if line.startswith('#'):
@@ -233,17 +278,36 @@ class PrefixIndex:
                     self.ignored_prefix_tokens_set.add(line)
 
 
+    def _init_ignored_prefix_tokens_from_list(self, ingored_prefix_tokens_list):
+        # Set set of ignored prefixes to empty set
+        self.ignored_prefix_tokens_set = set()
+
+        # Do nothing if no list is given
+        if ingored_prefix_tokens_list is None:
+            return
+        # Do nothing if no list is empty
+        if len(ingored_prefix_tokens_list) == 0:
+            return
+        # Otherwise, go through list and handle each file name
+        for token in ingored_prefix_tokens_list:
+            self.ignored_prefix_tokens_set.add(token.lower())
+
+
 
 
 if __name__ == "__main__":
 
-    pi = PrefixIndex(['/home/christian/data/app-data/google-places/google-places-names-prefix-trie.txt'],
+    pi = PrefixIndex(input_file_name_list=['/home/christian/data/app-data/google-places/google-places-names-prefix-trie.txt'],
                      ingored_prefix_tokens_file_name_list=['/home/christian/data/app-data/google-places/prefix-trie-ignored-prefix-words.txt'])
 
+    #example_list = [('vivocity', '1'), ('marina bay sands', '2')]
+    #ignored_list = ['the', 'singapore', 'hotel']
 
+    #pi = PrefixIndex(input_list=example_list, ingored_prefix_tokens_list=ignored_list)
 
-    match_phrase, key_list =  pi.lookup_phrase("vivocity time")
-    print match_phrase, key_list
+    result_list =  pi.lookup_phrase("vivo city")
+    #match_phrase, key_list =  pi.lookup_phrase("waiting")
+    print result_list
 
     #match_phrase, candidate_phrases =  pi.lookup_phrase('McDonald\'s Sentosa')
     #print match_phrase, candidate_phrases

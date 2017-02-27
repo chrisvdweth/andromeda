@@ -1,16 +1,17 @@
 import Levenshtein
 import re
+import os
 
 import soundex
 
-from andromeda.utils import NlpUtils
+from andromeda.util import NlpUtil
 
 
 class ExlenNormalizer:
 
 
     def __init__(self, word_file_names_list):
-        self.nlp_util = NlpUtils()
+        self.nlp_util = NlpUtil()
         self.soundex = soundex.getInstance()
         self.soundex_dict = {}
         self.word_set = set()
@@ -25,7 +26,7 @@ class ExlenNormalizer:
 
     def _initialize_soundex_dict(self, word_file_name, comment='#'):
         self.soundex_dict = {}
-        with open(word_file_name, 'r') as f:
+        with open(os.path.expanduser(word_file_name), 'r') as f:
             for line in f:
                 line = line.strip()
                 if line.startswith(comment):
@@ -82,7 +83,7 @@ class ExlenNormalizer:
         result_word = candidate_list[0][0] # If still multiple matches, give priority to standard English words
 
         # Match the original capitalization as good as possible
-        result_word = NlpUtils.match_word_capitalization(word, result_word)
+        result_word = NlpUtil.match_word_capitalization(word, result_word)
 
         in_word_set = False
         if result_word.lower() in self.word_set:
@@ -103,7 +104,7 @@ class ExlenNormalizer:
         # Remove all candidates that do not contain the same basic letter sequence.
         # For example, "netter" has "neater" as candidate, but "neter" != "neater"
         word_minimized = self.nlp_util.replace_repeated_letters(word, 1, 1)
-        word_list_minimized = [w.lower() for w in word_list if word_minimized == NlpUtils.replace_repeated_letters(w, 1, 1)]
+        word_list_minimized = [w.lower() for w in word_list if word_minimized == NlpUtil.replace_repeated_letters(w, 1, 1)]
 
         # Calculate Levenshtein similarities for each word in word_list with input word
         similarities  = [(word, Levenshtein.ratio(str(word), str(w))) for w in word_list_minimized]

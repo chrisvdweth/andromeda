@@ -1,2 +1,4 @@
 from andromeda.core.featureextraction.lifeprocessor import LifeProcessor
 from andromeda.core.featureextraction.lifeprocessor import LifeProcessorApiResource
+from andromeda.core.featureextraction.timeextractor import TimeExtractor
+from andromeda.core.featureextraction.timeextractor import TimeExtractorApiResource

@@ -64,8 +64,6 @@ class TextPreprocessor:
 
 
 
-
-
 class TextPreprocessorApiResource(object):
 
     def __init__(self):

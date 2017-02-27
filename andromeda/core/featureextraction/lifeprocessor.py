@@ -3,8 +3,8 @@ import json
 import falcon
 
 from andromeda.config import ConfigReader
+from andromeda.config import Constants
 from andromeda.core.preprocessing import TextPreprocessor
-from andromeda.core.featureextraction.lifeprocessing.lifeconstants import LifeConstants
 from andromeda.core.featureextraction.lifeprocessing.allcaps import AllCaps
 from andromeda.core.featureextraction.lifeprocessing.negation import Negation
 from andromeda.core.featureextraction.lifeprocessing.wordtagger import WordTagger
@@ -26,22 +26,22 @@ class LifeProcessor:
         token_list = self.text_preprocessor.process(s)
 
         for feature_dict in token_list:
-            feature_dict[LifeConstants.TOKEN_FEATURE__BASE] = {}
+            feature_dict[Constants.LIFE__TOKEN_FEATURE__BASE] = {}
 
-        if life_rules_set is None or LifeConstants.LIFE__ALL_CAPS in life_rules_set:
-            AllCaps.process(token_list, LifeConstants.LIFE__ALL_CAPS)
+        if life_rules_set is None or Constants.LIFE__ALL_CAPS in life_rules_set:
+            AllCaps.process(token_list, Constants.LIFE__ALL_CAPS)
 
-        if life_rules_set is None or LifeConstants.LIFE__NEGATION in life_rules_set:
-            self.negation.process(token_list, LifeConstants.LIFE__NEGATION)
+        if life_rules_set is None or Constants.LIFE__NEGATION in life_rules_set:
+            self.negation.process(token_list, Constants.LIFE__NEGATION)
 
-        if life_rules_set is None or LifeConstants.LIFE__ANP in life_rules_set:
-            AdjectiveNounPairs.process(token_list, LifeConstants.LIFE__ANP)
+        if life_rules_set is None or Constants.LIFE__ANP in life_rules_set:
+            AdjectiveNounPairs.process(token_list, Constants.LIFE__ANP)
 
-        if life_rules_set is None or LifeConstants.LIFE__TAG in life_rules_set:
-            self.word_tagger.process(token_list, LifeConstants.LIFE__TAG)
+        if life_rules_set is None or Constants.LIFE__TAG in life_rules_set:
+            self.word_tagger.process(token_list, Constants.LIFE__TAG)
 
-        if life_rules_set is None or LifeConstants.LIFE__QUOTED in life_rules_set:
-            Quotation.process(token_list, LifeConstants.LIFE__QUOTED)
+        if life_rules_set is None or Constants.LIFE__QUOTED in life_rules_set:
+            Quotation.process(token_list, Constants.LIFE__QUOTED)
 
         return token_list
 
@@ -73,6 +73,7 @@ class LifeProcessorApiResource(object):
 
 if __name__ == '__main__':
 
+    print 'TEST'
     life = LifeProcessor()
 
 

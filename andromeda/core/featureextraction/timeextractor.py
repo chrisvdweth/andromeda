@@ -8,9 +8,10 @@ from andromeda.config import ConfigReader
 
 class TimeExtractor:
 
-    KEYWORDS_SET__NOW = {'now', 'right now', 'just now', 'current', 'currently',
+    KEYWORDS_SET__NOW = {'live', 'now', 'right now', 'just now', 'current', 'currently',
                          'at the moment', 'at this moment', 'at this moment', 'at that moment',
-                         'at present', 'for the time being'}
+                         'at present', 'for the time being',
+                         'still'}
 
     KEYWORDS_SET__LATEST = {'latest', 'recent', 'most recent', 'newest', 'most novel'}
 
@@ -38,7 +39,7 @@ class TimeExtractor:
     def _time_reference_mappings(self, mapping_file_names_list):
         self.time_references_mapping_dict = {}
         for mapping_file_name in mapping_file_names_list:
-            with open(mapping_file_name, 'r') as f:
+            with open(os.path.expanduser(mapping_file_name), 'r') as f:
                 for line in f:
                     # Remove all leading a trailing whitespaces
                     line = line.strip()
@@ -97,7 +98,7 @@ class TimeExtractor:
         offset = 0
         for m in p.finditer(s):
             prec_word = s[m.start(1)+offset : m.end(1)+offset].strip()
-            if prec_word not in set(['last', 'past', 'coming', 'next']):
+            if prec_word not in {'last', 'past', 'coming', 'next'}:
                 s = ' '.join(s[:m.end(1)+offset].split() + ['past'] + s[m.start(2)+offset:m.end(2)+offset].split() + s[m.end(2)+offset:].split())
 
                 offset += len('past')+1 # +1 because of additional whitespace
@@ -112,6 +113,7 @@ class TimeExtractor:
 
     def _process_own(self, s):
         matched_keywords_list = []
+        print s
         for m in self.pattern.finditer(s):
             matched_word = s[ m.span()[0] : m.span()[1] ]
             matched_keywords_list.append(matched_word)
@@ -120,7 +122,7 @@ class TimeExtractor:
 
     def _multiple_replace(self, dictionary, text):
         # Create a regular expression  from the dictionary keys
-        regex = re.compile("(%s)" % "|".join(map(re.escape, dictionary.keys())), re.IGNORECASE)
+        regex = re.compile("(\b%s\b)" % "|".join(map(re.escape, dictionary.keys())), re.IGNORECASE)
 
         # For each match, look-up corresponding value in dictionary
         return regex.sub(lambda mo: dictionary[mo.string[mo.start():mo.end()].lower()], text)

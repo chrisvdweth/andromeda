@@ -1,4 +1,6 @@
-from andromeda.utils import NlpUtils
+import os
+
+from andromeda.util import NlpUtil
 
 
 class SlangNormalizer:
@@ -11,7 +13,7 @@ class SlangNormalizer:
 
 
     def _init_slang_dict(self, input_file_name):
-        with open(input_file_name, 'r') as f:
+        with open(os.path.expanduser(input_file_name), 'r') as f:
             for line in f:
                 line = line.strip()
                 try:
@@ -31,7 +33,7 @@ class SlangNormalizer:
 
         if deslanged is not None:
             # Match cepitalization as good as possible
-            return True, NlpUtils.match_word_capitalization(word, deslanged)
+            return True, NlpUtil.match_word_capitalization(word, deslanged)
 
         return False, deslanged
 

@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import os
 import re
 import unicodedata
 
@@ -15,7 +16,7 @@ class Cleaner:
 
 
     def _add_to_unicode_mapping(self, unicode_to_ascii_mapping_file):
-        with open(unicode_to_ascii_mapping_file, 'r') as f:
+        with open(os.path.expanduser(unicode_to_ascii_mapping_file), 'r') as f:
             for line in f:
                 line = line.strip()
                 if line.startswith('#') or line == '':
@@ -42,7 +43,6 @@ class Cleaner:
         except:
             return s
 
-        print s
         # Replace the unicode LETTER characters with their closest ASCII representation
         # (this method removes, e.g., unicode apostrophes; hence, has to be called at last)
         try:
@@ -64,14 +64,3 @@ class Cleaner:
 
 
 
-
-if __name__ == '__main__':
-
-    c = Cleaner(['/home/christian/work/development/git/sesame-social/somesing/data/vocabulary-files/unicode-to-ascii-mapping.txt'])
-
-    s = u'@Alice \U0001F602 Winifred Kristé Cake test'
-
-    for char in s:
-        print char, unicodedata.category(char)
-
-    print c.clean(u'@Alice \U0001F602 Winifred Kristé Cake test')

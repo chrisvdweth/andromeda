@@ -1,6 +1,7 @@
-from andromeda.core.featureextraction.lifeprocessing.lifeconstants import LifeConstants
+from andromeda.config import Constants
+from andromeda.util import TokenListUtil
 from andromeda.core.featureextraction.lifeprocessing.lifebase import LifeBase
-from andromeda.core.preprocessing.text.postagger import POSTagger
+
 
 
 class WordTagger:
@@ -21,11 +22,11 @@ class WordTagger:
 
         for idx, feature_dict in enumerate(token_list):
 
-            token = LifeBase.get_token(token_list, idx)
-            token_pos_tag = LifeBase.get_pos_tag(token_list, idx)
+            token = TokenListUtil.get_token(token_list, idx)
+            token_pos_tag = TokenListUtil.get_pos_tag(token_list, idx)
 
-            if token_pos_tag == POSTagger.POS_TAG__ADJECTIVE:
-                token_pref = LifeBase.get_pos_tag(token_list, idx-1, default='[NONE]')
+            if token_pos_tag == Constants.POSTAGGER__POS_TAG__ADJECTIVE:
+                token_pref = TokenListUtil.get_pos_tag(token_list, idx-1, default='[NONE]')
                 adjective_types_list = self._tag_adjective(token, preceeding_word=token_pref)
                 WordTagger._set_tags(feature_dict, adjective_types_list)
 
@@ -38,18 +39,18 @@ class WordTagger:
 
         # Check if comparative or superlative
         if adjective_word in self.adjective_comparatives_set:
-            types_set.add(LifeConstants.WORD_TYPE__ADJECTIVE__COMPARATIVE)
+            types_set.add(Constants.LIFE__WORD_TYPE__ADJECTIVE__COMPARATIVE)
         elif adjective_word in self.adjective_superlatives_set or preceeding_word == 'most':
-            types_set.add(LifeConstants.WORD_TYPE__ADJECTIVE__SUPERLATIVE)
+            types_set.add(Constants.LIFE__WORD_TYPE__ADJECTIVE__SUPERLATIVE)
         elif adjective_word in self.adjective_basics_set:
             if preceeding_word == 'more':
-                types_set.add(LifeConstants.WORD_TYPE__ADJECTIVE__COMPARATIVE)
+                types_set.add(Constants.LIFE__WORD_TYPE__ADJECTIVE__COMPARATIVE)
             elif preceeding_word == 'most':
-                types_set.add(LifeConstants.WORD_TYPE__ADJECTIVE__SUPERLATIVE)
+                types_set.add(Constants.LIFE__WORD_TYPE__ADJECTIVE__SUPERLATIVE)
 
         # Check if adjective of relevance (e.g., "significant", "important")
         if adjective_word in self.adjective_relevance_set:
-            types_set.add(LifeConstants.WORD_TYPE__ADJECTIVE__RELEVANCE)
+            types_set.add(Constants.LIFE__WORD_TYPE__ADJECTIVE__RELEVANCE)
 
         return types_set
 
@@ -60,7 +61,7 @@ class WordTagger:
         if len(tags_list) == 0:
             return
         # Check if corresponding field already existe; if not, add empty list
-        if LifeConstants.LIFE__TAG not in feature_dict[LifeConstants.TOKEN_FEATURE__BASE]:
-            feature_dict[LifeConstants.TOKEN_FEATURE__BASE][LifeConstants.LIFE__TAG] = []
+        if Constants.LIFE__TAG not in feature_dict[Constants.LIFE__TOKEN_FEATURE__BASE]:
+            feature_dict[Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__TAG] = []
         # Extend current tags list by the new tags from tags_list
-        feature_dict[LifeConstants.TOKEN_FEATURE__BASE][LifeConstants.LIFE__TAG].extend(tags_list)
+        feature_dict[Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__TAG].extend(tags_list)
