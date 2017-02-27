@@ -2,54 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8381c4a2-abc1-4dae-b319-ba0ce494661d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/closeup/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/closeup/text/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/closeup/text/locationcandidateextractor.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/closeup/text/locationextractionhandler.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/closeup/text/queryprocessor.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/closeup/text/solrsearchhandler.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/closeup/text/timeextractionhandler.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/sentiment/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/sentiment/sentigrade.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/sentiment/text/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/sentiment/text/sentilexindex.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/sentiment/text/sentilexscorer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/app/sentiment/text/sentiscorecalculator.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/config/constants.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/test/closeup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/test/timeextraction.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/andromeda/util/tokenlistutil.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/lifeconstants.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/andromeda/utils/__init__.py" afterPath="$PROJECT_DIR$/andromeda/util/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/andromeda/utils/nlputils.py" afterPath="$PROJECT_DIR$/andromeda/util/nlputil.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/api/server.py" afterPath="$PROJECT_DIR$/andromeda/api/server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/config/__init__.py" afterPath="$PROJECT_DIR$/andromeda/config/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/config/configreader.py" afterPath="$PROJECT_DIR$/andromeda/config/configreader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/__init__.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/adjectivenounpairs.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/adjectivenounpairs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/allcaps.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/allcaps.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/lifebase.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/lifebase.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/negation.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/negation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/quotation.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/quotation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/wordtagger.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/wordtagger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessor.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/featureextraction/timeextractor.py" afterPath="$PROJECT_DIR$/andromeda/core/featureextraction/timeextractor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/indexing/text/prefixindex.py" afterPath="$PROJECT_DIR$/andromeda/core/indexing/text/prefixindex.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/cleaner.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/cleaner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/emotextnormalizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/emotextnormalizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/emoticonnormalizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/emoticonnormalizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/exlennormalizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/exlennormalizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/segmentnormalizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/segmentnormalizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/slangnormalizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/slangnormalizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/unicodenormalizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/normalizing/unicodenormalizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/postagger.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/postagger.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/segmenter.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/segmenter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/text/tokenizer.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/text/tokenizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/core/preprocessing/textpreprocessor.py" afterPath="$PROJECT_DIR$/andromeda/core/preprocessing/textpreprocessor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/andromeda/test/lifeprocessing.py" afterPath="$PROJECT_DIR$/andromeda/test/lifeprocessing.py" />
     </list>
     <ignored path="andromeda.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,94 +24,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lifeprocessor.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/andromeda/config/lifeprocessor.yaml">
+      <file leaf-file-name="textpreprocessing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/andromeda/test/textpreprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sentigrade.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/andromeda/config/sentigrade.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="textpreprocessor.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/andromeda/config/textpreprocessor.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timeextractor.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/andromeda/config/timeextractor.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="615">
+              <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="postagger.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/andromeda/core/preprocessing/text/postagger.py">
+      <file leaf-file-name="configreader.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/andromeda/config/configreader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solrsearchhandler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/andromeda/app/closeup/text/solrsearchhandler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timeextractionhandler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/andromeda/app/closeup/text/timeextractionhandler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="closeup.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/andromeda/config/closeup.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -181,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/andromeda/app/__init__.py" />
         <option value="$PROJECT_DIR$/andromeda/util/__init__.py" />
         <option value="$PROJECT_DIR$/andromeda/config/__init__.py" />
         <option value="$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessing/allcaps.py" />
@@ -225,13 +119,14 @@
         <option value="$PROJECT_DIR$/andromeda/core/featureextraction/timeextractor.py" />
         <option value="$PROJECT_DIR$/andromeda/app/closeup/text/locationextractionhandler.py" />
         <option value="$PROJECT_DIR$/andromeda/core/indexing/text/prefixindex.py" />
-        <option value="$PROJECT_DIR$/andromeda/config/configreader.py" />
         <option value="$PROJECT_DIR$/andromeda/app/sentiment/text/sentilexscorer.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/andromeda/core/preprocessing/text/postagger.py" />
         <option value="$PROJECT_DIR$/andromeda/app/closeup/text/timeextractionhandler.py" />
         <option value="$PROJECT_DIR$/andromeda/app/closeup/text/solrsearchhandler.py" />
         <option value="$PROJECT_DIR$/andromeda/config/closeup.yaml" />
+        <option value="$PROJECT_DIR$/andromeda/test/textpreprocessing.py" />
+        <option value="$PROJECT_DIR$/andromeda/config/configreader.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -647,7 +542,7 @@
       <recent name="$PROJECT_DIR$/andromeda/config" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.solrsearchhandler">
+  <component name="RunManager" selected="Python.textpreprocessing">
     <configuration default="false" name="textpreprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -907,10 +802,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.solrsearchhandler" />
-        <item index="1" class="java.lang.String" itemvalue="Python.sentigrade" />
-        <item index="2" class="java.lang.String" itemvalue="Python.sentilexscorer" />
-        <item index="3" class="java.lang.String" itemvalue="Python.textpreprocessing" />
+        <item index="0" class="java.lang.String" itemvalue="Python.textpreprocessing" />
+        <item index="1" class="java.lang.String" itemvalue="Python.solrsearchhandler" />
+        <item index="2" class="java.lang.String" itemvalue="Python.sentigrade" />
+        <item index="3" class="java.lang.String" itemvalue="Python.sentilexscorer" />
         <item index="4" class="java.lang.String" itemvalue="Python.cleaner" />
       </list>
     </recent_temporary>
@@ -1102,14 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/andromeda/test/lifeprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1138,22 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1016">
           <caret line="247" column="4" lean-forward="false" selection-start-line="247" selection-start-column="4" selection-end-line="247" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/andromeda/core/preprocessing/textpreprocessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/andromeda/test/textpreprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1304,16 +1175,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/andromeda/config/configreader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/andromeda/config/lifeprocessor.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1326,30 +1187,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/andromeda/config/textpreprocessor.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/andromeda/config/timeextractor.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1384,6 +1221,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/andromeda/config/textpreprocessor.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/andromeda/core/preprocessing/textpreprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="23" column="66" lean-forward="true" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/andromeda/core/featureextraction/lifeprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/andromeda/config/timeextractor.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/andromeda/config/configreader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/andromeda/test/textpreprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
           <folding />
         </state>
       </provider>

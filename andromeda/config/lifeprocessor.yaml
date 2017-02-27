@@ -1,0 +1,18 @@
+negation:
+    negation-words-files:
+        - ~/andromeda-data/vocabulary-files/english-negation-words-lowercase.txt
+    negation-delimiter-words-files:
+        - ~/andromeda-data/vocabulary-files/english-negation-delimiter-words-lowercase.txt
+    negation-inhibitor-words-files:
+        - ~/andromeda-data/vocabulary-files/english-negation-inhibitor-words-lowercase.txt
+    negation-nonscope-words-files:
+        - ~/andromeda-data/vocabulary-files/english-auxiliary-verbs-lowercase.txt
+word-tagger:
+    adjective-words-files:
+        - ~/andromeda-data/vocabulary-files/english-adjectives-lowercase.txt
+    comparative-words-files:
+        - ~/andromeda-data/vocabulary-files/english-adjectives-comparatives-lowercase.txt
+    superlative-words-files:
+        - ~/andromeda-data/vocabulary-files/english-adjectives-superlatives-lowercase.txt
+    adjective-relevance-words-files:
+        - ~/andromeda-data/vocabulary-files/english-adjectives-relevance-lowercase.txt

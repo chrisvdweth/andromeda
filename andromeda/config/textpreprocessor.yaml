@@ -1,0 +1,19 @@
+cleaner:
+    mapping-files:
+        - ~/andromeda-data/vocabulary-files/unicode-to-ascii-mapping.txt
+normalizer:
+    exlen-files:
+        - ~/andromeda-data/vocabulary-files/english-lowercase.txt
+    slang-exlen-files:
+        - ~/andromeda-data/vocabulary-files/inet-slangs-words.txt
+    slang-files:
+        - ~/andromeda-data/vocabulary-files/inet-slangs-words.txt
+    unicode-files:
+        - ~/andromeda-data/vocabulary-files/unicode-to-ascii-mapping-emojis.txt
+        - ~/andromeda-data/vocabulary-files/unicode-to-ascii-mapping.txt
+    emotext-files:
+        - ~/andromeda-data/vocabulary-files/english-lowercase.txt
+    segmenter-files:
+        - ~/andromeda-data/vocabulary-files/english-segmenter-words.txt
+pos-tagger:
+    api-url: http://localhost:11065/postag/

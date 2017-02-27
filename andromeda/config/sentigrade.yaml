@@ -1,0 +1,12 @@
+senti-score-calculator:
+    sentilex-scorer:
+        sentilex-words-files:
+            afinn:
+                ~/andromeda-data/sentiment-files/sentilex-afinn.txt
+            opinion-observer:
+                ~/andromeda-data/sentiment-files/sentilex-opinionobserver.txt
+            senti-strength:
+                ~/andromeda-data/sentiment-files/sentilex-sentistrength.txt
+            vader:
+                ~/andromeda-data/sentiment-files/sentilex-vader.txt
+

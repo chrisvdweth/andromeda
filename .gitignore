@@ -39,4 +39,4 @@ Thumbs.db
 
 # YAML config files  #
 ######################
-*.yaml
+# *.yaml
