@@ -59,7 +59,7 @@ class SentiScoreCalculator:
 
         # Add sentiment value to token list if the value is not 0.0
         if sentiment_value is not None and sentiment_value != 0.0:
-            token_list[idx][Constants.SENTIGRADE__TOKEN_FEATURE__BASE][Constants.SENTIGRADE__TOKEN_SENTIMENT_SCORE] = sentiment_value
+            token_list[idx][Constants.SENTIGRADE__TOKEN_FEATURE__BASE][Constants.SENTIGRADE__TOKEN_SENTIMENT_SCORE] = round(sentiment_value, 3)
 
 
 
