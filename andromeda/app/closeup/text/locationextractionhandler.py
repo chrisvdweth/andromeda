@@ -41,7 +41,7 @@ class LocationExtractionHandler:
 
         search_result_list = search_result_list[:limit]
 
-        return [ { 'name' : r['name'][0], 'id' : r['id'], 'ploc' : { 'lat' : float(r['lat'][0]), 'lng' : float(r['lng'][0]) }, 'tags' : r['tags'] } for r in search_result_list ]
+        return [ { 'name' : r['name'], 'id' : r['id'], 'ploc' : { 'lat' : float(r['lat'][0]), 'lng' : float(r['lng'][0]) }, 'tags' : r['tags'] } for r in search_result_list ]
 
 
 

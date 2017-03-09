@@ -10,7 +10,6 @@ class SolrSearchHandler:
     def __init__(self, config):
         self._ignored_prefixes_list = set()
         self._init_ignored_prefix_tokens_from_file(config['prefix-trie-ignored-prefixes-file-list'])
-        print config
         self._solr_url = config['base-url']
 
 
