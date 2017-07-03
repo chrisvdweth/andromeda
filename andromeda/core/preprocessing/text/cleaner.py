@@ -47,7 +47,7 @@ class Cleaner:
         # (this method removes, e.g., unicode apostrophes; hence, has to be called at last)
         try:
             # Ignore characters that are not assinged (e.g. "Cn" category), otherwise emojies get removed
-            s = ''.join([unicodedata.normalize('NFD', c).encode('ascii', 'ignore') if unicodedata.category(c) not in ['Cn'] else c for c in s ])
+            s = ''.join([unicodedata.normalize('NFD', c) if unicodedata.category(c) not in ['Cn'] else c for c in s ])
         except:
             return s
 
