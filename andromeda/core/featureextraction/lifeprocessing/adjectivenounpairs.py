@@ -21,6 +21,7 @@ class AdjectiveNounPairs:
 
         AdjectiveNounPairs._process_premodifiers(token_list, pos_tags_string)
         AdjectiveNounPairs._process_postmodifiers(token_list, pos_tags_string)
+        AdjectiveNounPairs._filter_anp(token_list)
 
 
 
@@ -72,7 +73,6 @@ class AdjectiveNounPairs:
             AdjectiveNounPairs._set_anp(token_list, adjective_pos_list, noun_pos_list)
 
 
-
     @staticmethod
     def _set_anp(token_list, adjective_pos_list, noun_pos_list):
         # Assign the position of the described nouns to each adjective
@@ -86,3 +86,34 @@ class AdjectiveNounPairs:
                 token_list[noun_pos][Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__ANP] = []
             token_list[noun_pos][Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__ANP].extend(adjective_pos_list)
 
+
+    @staticmethod
+    def _filter_anp(token_list):
+        for pos, item in enumerate(token_list):
+            pos_tag = item[Constants.POSTAGGER__TOKEN_FEATURE__BASE][Constants.POSTAGGER__TOKEN_FEATURE__POS_TAG]
+            # Ignore words that are not an adjective
+            if pos_tag != Constants.POSTAGGER__POS_TAG__ADJECTIVE:
+                continue
+            # Just to be sure, check of adjective describes indeed a noun
+            if Constants.LIFE__ANP in item[Constants.LIFE__TOKEN_FEATURE__BASE]:
+                noun_pos_list = item[Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__ANP]
+            else:
+                continue
+            # Split between pre- and post-modifier adjectives (the positions)
+            pre = [p for p in noun_pos_list if p > pos]
+            post = [p for p in noun_pos_list if p < pos]
+            # Nothing to do if it's not critical case
+            if len(pre) == 0 or len(post) == 0:
+                continue
+            # By default, pre-modifier adjectives win ==> remove ANP info from post-modifier adjectives
+            for p in post:
+                AdjectiveNounPairs._remove_anp_entry(token_list, pos, p)
+                AdjectiveNounPairs._remove_anp_entry(token_list, p, pos)
+
+
+    @staticmethod
+    def _remove_anp_entry(token_list, pos, anp_pos):
+        try:
+            token_list[pos][Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__ANP].remove(anp_pos)
+        except:
+            pass
