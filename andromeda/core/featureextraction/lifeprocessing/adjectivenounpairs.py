@@ -115,5 +115,7 @@ class AdjectiveNounPairs:
     def _remove_anp_entry(token_list, pos, anp_pos):
         try:
             token_list[pos][Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__ANP].remove(anp_pos)
+            if len(token_list[pos][Constants.LIFE__TOKEN_FEATURE__BASE][Constants.LIFE__ANP]) == 0:
+                token_list[pos][Constants.LIFE__TOKEN_FEATURE__BASE].pop(Constants.LIFE__ANP, None)
         except:
             pass
