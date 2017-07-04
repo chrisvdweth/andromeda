@@ -28,8 +28,13 @@ class POSTagger:
             self._set_all_to_uknown(token_list)
             return token_list
 
-        for pos in range(len(token_list)):
-            token_list[pos][Constants.POSTAGGER__TOKEN_FEATURE__BASE][Constants.POSTAGGER__TOKEN_FEATURE__POS_TAG] = pos_tagger_result[pos][1]
+        for pos in xrange(len(token_list)):
+            # Replace pausing POS tag with terminal POS tag
+            # (the POS tagger does not distinguish between terminal and pausing punctuation marks)
+            if pos_tagger_result[pos][1] == Constants.POSTAGGER__POS_TAG__PUNCTUATION_PAUSING and token_list[pos][Constants.TOKENIZER__TOKEN_FEATURE__BASE][Constants.TOKENIZER__TOKEN_FEATURE__CLASS] in [Constants.TOKENIZER__TOKEN_CLASS__PUNCTUATION_TERMINAL_POINTS, Constants.TOKENIZER__TOKEN_CLASS__PUNCTUATION_TERMINAL_POINTS_REPEATED]:
+                token_list[pos][Constants.POSTAGGER__TOKEN_FEATURE__BASE][Constants.POSTAGGER__TOKEN_FEATURE__POS_TAG] = Constants.POSTAGGER__POS_TAG__PUNCTUATION_TERMINAL
+            else:
+                token_list[pos][Constants.POSTAGGER__TOKEN_FEATURE__BASE][Constants.POSTAGGER__TOKEN_FEATURE__POS_TAG] = pos_tagger_result[pos][1]
 
         return token_list
 
