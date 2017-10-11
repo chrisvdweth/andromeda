@@ -16,4 +16,4 @@ normalizer:
     segmenter-files:
         - ~/andromeda-data/vocabulary-files/english-segmenter-words.txt
 pos-tagger:
-    api-url: http://localhost:11065/postag/
+    api-url: http://172.29.33.45:11065/postag/

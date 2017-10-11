@@ -70,6 +70,7 @@ class POSTagger:
 
 
     def _request_pos_tags(self, text):
+        print self.api_url
         payload = { "text": text }
         try:
             r = requests.post(self.api_url, data=json.dumps(payload))

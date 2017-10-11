@@ -3,7 +3,7 @@ import os
 import json
 import falcon
 
-#from natty import DateParser
+from natty import DateParser
 from andromeda.config import ConfigReader
 
 class TimeExtractor:
@@ -107,8 +107,8 @@ class TimeExtractor:
 
 
     def _process_natty(self, s):
-        #dp = DateParser(s)
-        #return dp.result()
+        dp = DateParser(s)
+        return dp.result()
         return ""
 
 

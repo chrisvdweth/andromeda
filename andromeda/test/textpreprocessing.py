@@ -5,4 +5,5 @@ from andromeda.core.preprocessing import TextPreprocessor
 
 tpp = TextPreprocessor()
 
-print tpp.process('This was soooo AWEEEEESOME!!!')
+
+print tpp.process('@DemoUser This was soooo #very...AWEEEEESOME!!!')
